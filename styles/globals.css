@@ -1,0 +1,33 @@
+@import "tailwindcss";
+@import "@heroui/styles";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Fira Code", ui-monospace, monospace;
+}
+
+@layer base {
+  body {
+    @apply min-h-screen bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .page-container {
+    @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-heading {
+    @apply text-3xl font-bold tracking-tight text-foreground sm:text-4xl;
+  }
+
+  .section-subheading {
+    @apply mt-2 text-base text-muted sm:text-lg;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-emerald-500 to-indigo-500 bg-clip-text text-transparent;
+  }
+}
