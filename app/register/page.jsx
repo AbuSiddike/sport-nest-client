@@ -85,6 +85,7 @@ export default function RegisterPage() {
                 value={form[f.name]}
                 onChange={handleChange}
                 required={f.required}
+                className="rounded-lg border border-border bg-surface"
               />
               {f.name === "password" && form.password && passwordErrors.length > 0 && (
                 <ul className="mt-1 list-inside list-disc text-xs text-danger">
