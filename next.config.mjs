@@ -1,19 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  images: {
-    remotePatterns: [
-      { protocol: "https", hostname: "**" },
-      { protocol: "http", hostname: "**" },
-    ],
-  },
-  async rewrites() {
-    return [
-      {
-        source: "/api/v1/:path*",
-        destination: `${process.env.BACKEND_BASE_URL || "http://localhost:4000"}/api/v1/:path*`,
-      },
-    ];
-  },
-};
+const nextConfig = {};
 
 export default nextConfig;
