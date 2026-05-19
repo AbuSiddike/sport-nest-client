@@ -156,7 +156,8 @@ export function FacilityForm({ initialValues, onSubmit, submitLabel, isLoading }
         <TextArea
           value={form.description}
           onChange={(e) => updateField("description", e.target.value)}
-          minRows={4}
+          placeholder="A spacious football field with floodlights and seating area."
+          rows={5}
           required
         />
       </TextField>
