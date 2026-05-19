@@ -65,6 +65,7 @@ function LoginForm() {
               placeholder="you@example.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              className="rounded-lg border border-border bg-surface"
             />
           </TextField>
 
@@ -75,6 +76,7 @@ function LoginForm() {
               placeholder="Enter your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              className="rounded-lg border border-border bg-surface"
             />
           </TextField>
 
