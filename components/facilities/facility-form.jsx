@@ -58,13 +58,19 @@ export function FacilityForm({ initialValues, onSubmit, submitLabel, isLoading }
     <form onSubmit={handleSubmit} className="space-y-5">
       <TextField isRequired>
         <Label>Facility Name</Label>
-        <Input value={form.name} onChange={(e) => updateField("name", e.target.value)} required placeholder="John Due"/>
+        <Input
+          value={form.name}
+          onChange={(e) => updateField("name", e.target.value)}
+          required
+          placeholder="John Due"
+          className="rounded-md border border-border bg-surface"
+        />
       </TextField>
 
       <TextField isRequired>
         <Label>Facility Type</Label>
         <select
-          className="w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm"
+          className="w-full rounded-md border border-border bg-surface px-3 py-2 text-sm"
           value={form.facility_type}
           onChange={(e) => updateField("facility_type", e.target.value)}
         >
@@ -83,6 +89,7 @@ export function FacilityForm({ initialValues, onSubmit, submitLabel, isLoading }
           value={form.image}
           onChange={(e) => updateField("image", e.target.value)}
           placeholder="https://i.ibb.co/your-photo.jpg"
+          className="rounded-md border border-border bg-surface"
         />
       </TextField>
 
@@ -93,6 +100,7 @@ export function FacilityForm({ initialValues, onSubmit, submitLabel, isLoading }
           onChange={(e) => updateField("location", e.target.value)}
           placeholder="Dhaka, Mirpur"
           required
+          className="rounded-md border border-border bg-surface"
         />
       </TextField>
 
@@ -105,6 +113,7 @@ export function FacilityForm({ initialValues, onSubmit, submitLabel, isLoading }
             value={form.price_per_hour}
             onChange={(e) => updateField("price_per_hour", e.target.value)}
             required
+            className="rounded-md border border-border bg-surface"
           />
         </TextField>
         <TextField isRequired>
@@ -115,6 +124,7 @@ export function FacilityForm({ initialValues, onSubmit, submitLabel, isLoading }
             value={form.capacity}
             onChange={(e) => updateField("capacity", e.target.value)}
             required
+            className="rounded-md border border-border bg-surface"
           />
         </TextField>
       </div>
@@ -128,7 +138,7 @@ export function FacilityForm({ initialValues, onSubmit, submitLabel, isLoading }
                 value={slot}
                 onChange={(e) => updateSlot(index, e.target.value)}
                 placeholder="06:00-08:00"
-                className="flex-1"
+                className="flex-1 rounded-md border border-border bg-surface"
                 required
               />
               {form.available_slots.length > 1 && (
@@ -159,6 +169,7 @@ export function FacilityForm({ initialValues, onSubmit, submitLabel, isLoading }
           placeholder="A spacious football field with floodlights and seating area."
           rows={5}
           required
+          className="rounded-md border border-border bg-surface"
         />
       </TextField>
 
