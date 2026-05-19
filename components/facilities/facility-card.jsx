@@ -19,7 +19,7 @@ export function FacilityCard({ facility }) {
       className="h-full"
     >
       <Card className="flex h-full flex-col overflow-hidden transition-shadow hover:shadow-lg">
-        <div className="relative aspect-[4/3] overflow-hidden">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-t-xl">
           <img
             src={facility.image || FALLBACK_IMAGE}
             alt={facility.name}
@@ -28,7 +28,7 @@ export function FacilityCard({ facility }) {
               e.currentTarget.src = FALLBACK_IMAGE;
             }}
           />
-          <Chip className="absolute left-3 top-3" color="accent" variant="soft" size="sm">
+          <Chip className="absolute left-3 top-3" color="default" variant="primary" size="sm">
             {capitalize(facility.facility_type)}
           </Chip>
         </div>
@@ -53,7 +53,9 @@ export function FacilityCard({ facility }) {
 
           <div className="mt-auto flex items-center justify-between border-t border-border pt-3">
             <div>
-              <span className="text-lg font-bold text-emerald-500">{formatPrice(facility.price_per_hour)}</span>
+              <span className="text-lg font-bold text-emerald-500">
+                {formatPrice(facility.price_per_hour)}
+              </span>
               <span className="text-xs text-muted">/hr</span>
             </div>
             <BookNowButton facilityId={facility._id} />
