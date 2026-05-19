@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { Card, Chip } from "@heroui/react";
 import { FiClock, FiMapPin, FiUsers } from "react-icons/fi";
@@ -21,6 +21,7 @@ function FacilityDetailContent() {
   const [facility, setFacility] = useState(null);
   const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     if (!id) return;
@@ -35,6 +36,7 @@ function FacilityDetailContent() {
     try {
       await createBooking({ ...data, user_email: session.user.email });
       toast.success("Booking created successfully!");
+      router.push("/my-bookings");
     } catch (err) {
       toast.error(err.response?.data?.message || "Failed to create booking");
     } finally {
