@@ -14,6 +14,7 @@ export function FacilityFilters({ search, selectedTypes, onSearchChange, onTypes
             placeholder="Search facilities..."
             value={search}
             onChange={(e) => onSearchChange(e.target.value)}
+            className="rounded-md border border-border bg-surface"
           />
         </TextField>
 
@@ -26,15 +27,17 @@ export function FacilityFilters({ search, selectedTypes, onSearchChange, onTypes
         <Label className="mb-2 block">Filter by sport type</Label>
         <CheckboxGroup
           value={selectedTypes}
-          onChange={(value) => {
-            const next = Array.isArray(value) ? value : [...value];
-            onTypesChange(next);
-          }}
+          onChange={onTypesChange}
           className="grid grid-cols-2 gap-2 sm:grid-cols-4"
         >
           {FACILITY_TYPES.map((type) => (
             <Checkbox key={type} value={type}>
-              {capitalize(type)}
+              <Checkbox.Control className="border-1 drop-shadow-md">
+                <Checkbox.Indicator/>
+              </Checkbox.Control>
+              <Checkbox.Content>
+                <Label>{capitalize(type)}</Label>
+              </Checkbox.Content>
             </Checkbox>
           ))}
         </CheckboxGroup>
