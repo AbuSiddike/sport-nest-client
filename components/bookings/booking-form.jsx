@@ -33,12 +33,19 @@ export function BookingForm({ facility, onSubmit, isLoading }) {
   const today = new Date().toISOString().split("T")[0];
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 rounded-xl border border-border bg-surface p-5">
+    <form
+      onSubmit={handleSubmit}
+      className="space-y-4 rounded-xl border border-border bg-surface p-5"
+    >
       <h2 className="text-xl font-semibold text-foreground">Book This Facility</h2>
 
       <TextField>
         <Label>Facility Name</Label>
-        <Input value={facility.name} readOnly={true} />
+        <Input
+          value={facility.name}
+          readOnly={true}
+          className="rounded-md border border-border bg-surface"
+        />
       </TextField>
 
       <TextField isRequired>
@@ -49,6 +56,7 @@ export function BookingForm({ facility, onSubmit, isLoading }) {
           value={bookingDate}
           onChange={(e) => setBookingDate(e.target.value)}
           required
+          className="rounded-md border border-border bg-surface"
         />
       </TextField>
 
@@ -76,6 +84,7 @@ export function BookingForm({ facility, onSubmit, isLoading }) {
           value={hours}
           onChange={(e) => setHours(e.target.value)}
           required
+          className="rounded-md border border-border bg-surface"
         />
       </TextField>
 
